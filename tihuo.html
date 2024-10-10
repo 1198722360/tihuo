@@ -11,11 +11,9 @@
     body, html {
       height: 100%;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
+      overflow: auto;
     }
     #app {
       text-align: center;
@@ -23,13 +21,21 @@
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: auto;
     }
     .input-container {
       margin-bottom: 20px;
     }
-    img {
-      max-width: 100%;
-      height: auto;
+    .success-message {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+    .extraction-image {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -48,13 +54,16 @@
       </el-main>
     </el-container>
     <div v-else>
-      <img src="./kf.jpg" alt="提取结果" />
+      <div class="success-message">
+        请添加我们的客服小天使，将<span style="color:red">订单截图</span>发送给她哦，她会将网址、使用教程、激活码一并发送给您~
+      </div>
+      <el-image class="extraction-image" src="./kf.jpg" alt="提取结果"></el-image>
     </div>
   </div>
 
   <script>
     const { createApp } = Vue;
-    const { ElContainer, ElHeader, ElMain, ElInput, ElButton, ElAlert } = ElementPlus;
+    const { ElContainer, ElHeader, ElMain, ElInput, ElButton, ElAlert, ElImage } = ElementPlus;
 
     createApp({
       data() {
@@ -82,6 +91,7 @@
       .component('el-input', ElInput)
       .component('el-button', ElButton)
       .component('el-alert', ElAlert)
+      .component('el-image', ElImage)
       .mount('#app');
   </script>
 </body>
