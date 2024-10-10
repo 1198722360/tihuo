@@ -23,6 +23,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 500px;
       margin: auto;
+	  margin-top: 100px;
     }
     .input-container {
       margin-bottom: 20px;
@@ -75,7 +76,7 @@
       },
       methods: {
         extract() {
-          if (this.orderId && /^[0-9]+$/.test(this.orderId)) {
+          if (this.orderId && /^[0-9]+$/.test(this.orderId) && this.orderId.length >= 15) {
             this.isOrderValid = true;
           } else {
             this.errorMessage = '出错啦！订单号不存在';
