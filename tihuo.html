@@ -75,7 +75,7 @@
       },
       methods: {
         extract() {
-          if (this.orderId && /^[0-9]+$/.test(this.orderId) && this.orderId.length >= 15) {
+          if (this.orderId.length >= 15) {
             this.isOrderValid = true;
           } else {
             this.errorMessage = '出错啦！订单号不存在';
