@@ -48,7 +48,7 @@
       </el-header>
       <el-main>
         <div class="input-container">
-          <el-input v-model="orderId" placeholder="请输入订单编号" @input="clearError"></el-input>
+          <el-input v-model="orderId" placeholder="请输入pdd订单编号" @input="clearError"></el-input>
         </div>
         <el-button type="primary" @click="extract">在线提取</el-button>
         <el-alert v-if="errorMessage" type="error" :closable="false">{{ errorMessage }}</el-alert>
@@ -57,7 +57,7 @@
     <div v-else>
       <div class="success-message">
       </div>
-	<el-button @click="window.location.href='https://qcnd0t382a52.feishu.cn/wiki/OaltwzT6diBA4nk7kwrcBxjpnyf?from=from_copylink'">点我提货</el-button>
+	<el-button @click="ti">点我提货</el-button>
     </div>
   </div>
 
@@ -83,7 +83,10 @@
         },
         clearError() {
           this.errorMessage = '';
-        }
+        },
+	ti(){
+	  window.location.href="https://qcnd0t382a52.feishu.cn/wiki/OaltwzT6diBA4nk7kwrcBxjpnyf?from=from_copylink"
+	}
       }
     }).component('el-container', ElContainer)
       .component('el-header', ElHeader)
